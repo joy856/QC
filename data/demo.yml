@@ -1,0 +1,4 @@
+get_baidu:
+  url: https://www.baidu.com
+  method: GET
+  data
