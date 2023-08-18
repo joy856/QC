@@ -1,1 +1,24 @@
-<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite errors="0" failures="0" hostname="LAPTOP-KL8DAOBF" name="pytest" skipped="0" tests="1" time="0.896" timestamp="2023-08-08T17:21:24.325953"><testcase classname="testcase.test_demo.TestClass" file="testcase\test_demo.py" line="15" name="test_01[data0]" time="0.561"></testcase></testsuite></testsuites>
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite errors="0" failures="1" hostname="LAPTOP-KL8DAOBF" name="pytest" skipped="0" tests="4" time="31.838" timestamp="2023-08-18T17:14:35.113661"><testcase classname="testcase.test_demo.TestClass" file="testcase\test_demo.py" line="21" name="test_01[data0]" time="25.816"></testcase><testcase classname="testcase.test_demo.TestClass" file="testcase\test_demo.py" line="21" name="test_01[data1]" time="2.887"><failure message="AssertionError: 判断响应数据是否包含‘百度’
+assert &apos;百度&apos; in &apos;&lt;!DOCTYPE html&gt;\r\n&lt;!--STATUS OK--&gt;&lt;html&gt; &lt;head&gt;&lt;meta http-equiv=content-type content=text/html;charset=utf-8&gt;&lt;meta h...nbsp;äº¬ICPè¯\x81030173å\x8f·&amp;nbsp; &lt;img src=//www.baidu.com/img/gs.gif&gt; &lt;/p&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/body&gt; &lt;/html&gt;\r\n&apos;
+ +  where &apos;&lt;!DOCTYPE html&gt;\r\n&lt;!--STATUS OK--&gt;&lt;html&gt; &lt;head&gt;&lt;meta http-equiv=content-type content=text/html;charset=utf-8&gt;&lt;meta h...nbsp;äº¬ICPè¯\x81030173å\x8f·&amp;nbsp; &lt;img src=//www.baidu.com/img/gs.gif&gt; &lt;/p&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/body&gt; &lt;/html&gt;\r\n&apos; = &lt;Response [200]&gt;.text">self = &lt;testcase.test_demo.TestClass object at 0x000002027FD12550&gt;
+data = {&apos;响应数据&apos;: &apos;百度&apos;, &apos;响应状态&apos;: 200.0, &apos;用例ID&apos;: &apos;baidu_002&apos;, &apos;用例名称&apos;: &apos;百度首页字段值&apos;, ...}
+
+    @allure.story(&quot;请求接口&quot;)
+    @allure.title(&quot;请求百度状态&quot;)
+    @allure.description(&quot;判断状态是否为&apos;200&apos;&quot;)
+    def test_01(self, data):
+        print(&quot;用例id:&quot; + str(data[&apos;用例ID&apos;]))
+        print(&quot;用例名称:&quot; + str(data[&quot;用例名称&quot;]))
+        print(&quot;请求方式:&quot; + str(data[&quot;请求方式&quot;]))
+        print(&quot;请求地址:&quot; + str(data[&quot;请求地址&quot;]))
+        print(&quot;响应状态:&quot; + str(data[&quot;响应状态&quot;]))
+        print(&quot;响应数据:&quot;+ str(data[&quot;响应数据&quot;]))
+        res = ApiRequest().get(url=data[&apos;请求地址&apos;])
+        print(res.status_code)
+        assert res.status_code == data[&apos;响应状态&apos;], &quot;判断响应状态是否为200,实际为{}&quot;.format(data[&quot;响应状态&quot;])
+&gt;       assert data[&quot;响应数据&quot;] in res.text,&quot;判断响应数据是否包含‘百度’&quot;
+E       AssertionError: 判断响应数据是否包含‘百度’
+E       assert &apos;百度&apos; in &apos;&lt;!DOCTYPE html&gt;\r\n&lt;!--STATUS OK--&gt;&lt;html&gt; &lt;head&gt;&lt;meta http-equiv=content-type content=text/html;charset=utf-8&gt;&lt;meta h...nbsp;äº¬ICPè¯\x81030173å\x8f·&amp;nbsp; &lt;img src=//www.baidu.com/img/gs.gif&gt; &lt;/p&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/body&gt; &lt;/html&gt;\r\n&apos;
+E        +  where &apos;&lt;!DOCTYPE html&gt;\r\n&lt;!--STATUS OK--&gt;&lt;html&gt; &lt;head&gt;&lt;meta http-equiv=content-type content=text/html;charset=utf-8&gt;&lt;meta h...nbsp;äº¬ICPè¯\x81030173å\x8f·&amp;nbsp; &lt;img src=//www.baidu.com/img/gs.gif&gt; &lt;/p&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/body&gt; &lt;/html&gt;\r\n&apos; = &lt;Response [200]&gt;.text
+
+testcase\test_demo.py:35: AssertionError</failure></testcase><testcase classname="testcase.test_demo.TestClass" file="testcase\test_demo.py" line="36" name="test_02[data0]" time="1.165"></testcase><testcase classname="testcase.test_demo.TestClass" file="testcase\test_demo.py" line="36" name="test_02[data1]" time="1.253"></testcase></testsuite></testsuites>

@@ -1,2 +1,5 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Tue Aug 08 17:21:24 CST 2023","Tue Aug 08 17:21:25 CST 2023","553","testcase","test_demo","TestClass","","","test_01[data0]",""
+"passed","Fri Aug 18 17:15:05 CST 2023","Fri Aug 18 17:15:06 CST 2023","1249","testcase","test_demo","TestClass","","","请求百度页面元素","判断百度页面是否包含'百度'"
+"passed","Fri Aug 18 17:14:35 CST 2023","Fri Aug 18 17:15:01 CST 2023","25758","testcase","test_demo","TestClass","","","请求百度状态","判断状态是否为'200'"
+"passed","Fri Aug 18 17:15:04 CST 2023","Fri Aug 18 17:15:05 CST 2023","1162","testcase","test_demo","TestClass","","","请求百度页面元素","判断百度页面是否包含'百度'"
+"failed","Fri Aug 18 17:15:01 CST 2023","Fri Aug 18 17:15:04 CST 2023","2885","testcase","test_demo","TestClass","","","请求百度状态","判断状态是否为'200'"

@@ -33,7 +33,7 @@ class GetData():
 
 if __name__ == '__main__':
     g= GetData('excel_data','demo.xlsx')
-    print(g.read_excel()[0]['用例ID'])
+    print(g.read_excel()[0])
 
 
 
